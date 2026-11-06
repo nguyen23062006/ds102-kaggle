@@ -47,8 +47,17 @@ git push -u origin HEAD
 
 GitHub lưu file và lịch sử thay đổi; không tự đồng bộ lịch sử chat hay kết nối runtime Colab giữa các thành viên.
 
-## Cách lấy gói lên GitHub
+## Repository GitHub
 
-Repository nên để Private. Đẩy nội dung thư mục này bằng Git hoặc GitHub Desktop, không upload nguyên file ZIP như một file duy nhất. Gói này chưa có remote hay commit và chưa được upload.
+Repository riêng tư: https://github.com/nguyen23062006/ds102-kaggle
+
+Chủ repo cần mời thành viên vào Settings → Collaborators → Add people. Sau khi nhận lời mời, thành viên clone bằng:
+
+```bash
+git clone https://github.com/nguyen23062006/ds102-kaggle.git
+cd ds102-kaggle
+```
+
+Đây là bản chia sẻ mã nguồn đã được chọn lọc. Những file thay đổi trong thư mục nghiên cứu gốc chỉ xuất hiện trên GitHub sau khi được đồng bộ sang checkout này, commit và push; GitHub không tự theo dõi mọi thư mục trên máy.
 
 Chủ dự án chưa chọn giấy phép cho mã của nhóm. Việc sử dụng thư viện mã nguồn mở không tự gán giấy phép cho toàn bộ repo; giữ nguyên thông tin tác giả và giấy phép của phụ thuộc.
