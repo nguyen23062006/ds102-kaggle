@@ -1,0 +1,59 @@
+{
+  "stage": "pruned_on_predeclared_fold_gates",
+  "manifest_id": "b35f3d963a838c03f6c2a6f412582a1837f85be6b5eebdaf50410acb56ea269c",
+  "config": {
+    "seed": 102,
+    "cluster_split_seed": 2053,
+    "cluster_threshold": 0.7,
+    "folds": 3,
+    "word_ngrams": [
+      1,
+      2
+    ],
+    "word_max_features": 120000,
+    "word_min_df": 2,
+    "char_ngrams": [
+      3,
+      5
+    ],
+    "char_max_features": 120000,
+    "char_min_df": 3,
+    "char_scale": 0.5,
+    "alpha": 1.0,
+    "norm": false,
+    "balance": "sqrt_inverse_class_frequency",
+    "calibration": "sigmoid, three inner near-cluster folds; ensemble=True; n_jobs=1",
+    "candidate_alpha": 0.15,
+    "class_weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "gates": {
+      "cluster_min_delta": 0.003,
+      "exact_min_delta": 0.002,
+      "min_positive_folds": 2,
+      "max_fold_drop": 0.005,
+      "min_novel_fake_f1_delta": 0.0,
+      "bootstrap_q025_positive": true,
+      "min_dev_delta": 0.001,
+      "min_dev_without_exact_overlap_delta": 0.001
+    },
+    "pretrained": false,
+    "external_data": false,
+    "fit_data": "training partitions only"
+  },
+  "protocols": {},
+  "execution": "hosted Colab CPU",
+  "submission_created": false,
+  "best_user_reported_kaggle": 0.77436,
+  "caveat": "Adaptive project history remains; new grouped folds are a stress test, not untouched data. Conditional bootstrap is not post-selection proof or a promise of Kaggle gain.",
+  "elapsed_seconds": 33.30998754501343,
+  "protocol": "cluster",
+  "fold": 1,
+  "fold_deltas": [
+    -0.008692074838283492
+  ],
+  "rejected_protocol": "cluster"
+}

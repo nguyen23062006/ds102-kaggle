@@ -1,0 +1,217 @@
+{
+  "selection": {
+    "raw_macro_f1": 0.7651232845255038,
+    "cross_weight_macro_f1": 0.7681613908279921,
+    "fold_deltas": [
+      0.000904925851664351,
+      0.0022213587568191695,
+      0.0064716452158233295
+    ],
+    "fold_weights": [
+      [
+        1,
+        1.2,
+        1.2,
+        1
+      ],
+      [
+        1,
+        1,
+        1.2,
+        0.9
+      ],
+      [
+        1,
+        1,
+        1.2,
+        0.9
+      ]
+    ],
+    "use_weights": true,
+    "weights": [
+      1,
+      1,
+      1.2,
+      0.9
+    ],
+    "selection_score": 0.7681613908279921,
+    "config": {
+      "temperature": 3,
+      "cat_weight": 0.5
+    },
+    "family": "temperature",
+    "new_model_weight": 1,
+    "model_index": 0,
+    "raw_fold_f1": [
+      0.7756573287215651,
+      0.761976967519318,
+      0.7570169883016922
+    ]
+  },
+  "new_family": "temperature",
+  "dev": {
+    "macro_f1": 0.7348200162618499,
+    "accuracy": 0.9025157232704403,
+    "classification_report": {
+      "0": {
+        "precision": 0.9269293924466339,
+        "recall": 0.9543533389687235,
+        "f1-score": 0.9404414827155352,
+        "support": 1183.0
+      },
+      "1": {
+        "precision": 0.7,
+        "recall": 0.4117647058823529,
+        "f1-score": 0.5185185185185185,
+        "support": 17.0
+      },
+      "2": {
+        "precision": 0.6216216216216216,
+        "recall": 0.575,
+        "f1-score": 0.5974025974025974,
+        "support": 120.0
+      },
+      "3": {
+        "precision": 0.9163346613545816,
+        "recall": 0.8518518518518519,
+        "f1-score": 0.8829174664107485,
+        "support": 270.0
+      },
+      "accuracy": 0.9025157232704403,
+      "macro avg": {
+        "precision": 0.7912214188557093,
+        "recall": 0.698242474175732,
+        "f1-score": 0.7348200162618499,
+        "support": 1590.0
+      },
+      "weighted avg": {
+        "precision": 0.8996619021538992,
+        "recall": 0.9025157232704403,
+        "f1-score": 0.900272400305979,
+        "support": 1590.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1129,
+        2,
+        37,
+        15
+      ],
+      [
+        7,
+        7,
+        0,
+        3
+      ],
+      [
+        48,
+        0,
+        69,
+        3
+      ],
+      [
+        34,
+        1,
+        5,
+        230
+      ]
+    ]
+  },
+  "v3_dev": {
+    "macro_f1": 0.7331557178864636,
+    "accuracy": 0.9031446540880503,
+    "classification_report": {
+      "0": {
+        "precision": 0.92616899097621,
+        "recall": 0.9543533389687235,
+        "f1-score": 0.9400499583680266,
+        "support": 1183.0
+      },
+      "1": {
+        "precision": 0.7,
+        "recall": 0.4117647058823529,
+        "f1-score": 0.5185185185185185,
+        "support": 17.0
+      },
+      "2": {
+        "precision": 0.6372549019607843,
+        "recall": 0.5416666666666666,
+        "f1-score": 0.5855855855855856,
+        "support": 120.0
+      },
+      "3": {
+        "precision": 0.9073359073359073,
+        "recall": 0.8703703703703703,
+        "f1-score": 0.888468809073724,
+        "support": 270.0
+      },
+      "accuracy": 0.9031446540880503,
+      "macro avg": {
+        "precision": 0.7926899500682254,
+        "recall": 0.6945387704720283,
+        "f1-score": 0.7331557178864636,
+        "support": 1590.0
+      },
+      "weighted avg": {
+        "precision": 0.8987479242395255,
+        "recall": 0.9031446540880503,
+        "f1-score": 0.9000319272228717,
+        "support": 1590.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1129,
+        2,
+        34,
+        18
+      ],
+      [
+        7,
+        7,
+        0,
+        3
+      ],
+      [
+        52,
+        0,
+        65,
+        3
+      ],
+      [
+        31,
+        1,
+        3,
+        235
+      ]
+    ]
+  },
+  "fit_data": "train only; no dev or test labels for selection/fitting",
+  "pretrained": false,
+  "execution": "hosted Google Colab CPU",
+  "libraries": {
+    "scikit-learn": "1.7.2 (BSD-3-Clause)",
+    "CatBoost": "1.2.10 (Apache-2.0)"
+  },
+  "baseline_source": "user-authorized cached SVM and CatBoost predictions",
+  "rows_verified": 3974,
+  "prediction_counts": {
+    "0": 2968,
+    "3": 664,
+    "2": 296,
+    "1": 46
+  },
+  "data_sha256": {
+    "ds102_train.csv": "15202b19b2dc2c6c89afeb209024bb0dc77ddf927de44381a96c24a961d823a5",
+    "ds102_test.csv": "82c21afd6f8f4610912bc12ed19c3b6b1a586fb0dfa5d2296f6548ae4fc6b398",
+    "ds102_samplesubmission.csv": "4cf7832636057152395b8b20302c11a691fd2ab35d50057ef43443f3d388424d",
+    "ds102_dev.csv": "d895cc298b1e5b56bbb95c9f9b15610e5207a00cfd12cc79f32061e27b7a8ccf"
+  },
+  "caveat": "OOF used repeatedly for model selection. Calibration cross-validation is on existing OOF, not a fully nested refit. Dev also reused in development. Kaggle score is unknown.",
+  "v4_reference": {
+    "oof_macro_f1": 0.7686788914302343,
+    "dev_macro_f1": 0.7224755136057716,
+    "user_reported_kaggle": 0.76636
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "config": {
+    "dimensions": 128,
+    "seed": 102,
+    "folds": 3,
+    "trees": 800,
+    "depth": 5,
+    "lr": 0.06,
+    "alpha": 0.3,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.002,
+    "min_positive_folds": 2,
+    "max_novel_fake_f1_drop": 0.01,
+    "min_bootstrap_q05": 0,
+    "max_dev_drop": 0.005
+  },
+  "baseline_user_reported_kaggle": 0.77269,
+  "execution": "hosted Colab CPU",
+  "pretrained": false,
+  "fit_data": "train only",
+  "caveat": "Compared with current 64D refit from V10, not bit-identical historical v6. Repeated OOF/development use creates selection bias; bootstrap is conditional. Kaggle improvement unknown.",
+  "stage": "rejected_on_cv",
+  "fold": 3,
+  "dimensions": 128,
+  "fold_delta": -0.0016802264104008868,
+  "baseline_oof": {
+    "macro_f1": 0.7731457845664534,
+    "accuracy": 0.897036208583811,
+    "classification_report": {
+      "0": {
+        "precision": 0.9245002324500232,
+        "recall": 0.9458713850837138,
+        "f1-score": 0.9350637137348944,
+        "support": 10512
+      },
+      "1": {
+        "precision": 0.6893203883495146,
+        "recall": 0.6729857819905213,
+        "f1-score": 0.6810551558752997,
+        "support": 211
+      },
+      "2": {
+        "precision": 0.6193737769080235,
+        "recall": 0.5738893925657298,
+        "f1-score": 0.595764705882353,
+        "support": 1103
+      },
+      "3": {
+        "precision": 0.9104606112785192,
+        "recall": 0.8528225806451613,
+        "f1-score": 0.8806995627732667,
+        "support": 2480
+      },
+      "accuracy": 0.897036208583811,
+      "macro avg": {
+        "precision": 0.78591375224652,
+        "recall": 0.7613922850712815,
+        "f1-score": 0.7731457845664534,
+        "support": 14306
+      },
+      "weighted avg": {
+        "precision": 0.8950723219178434,
+        "recall": 0.897036208583811,
+        "f1-score": 0.8957329639967031,
+        "support": 14306
+      }
+    },
+    "confusion_matrix": [
+      [
+        9943,
+        47,
+        352,
+        170
+      ],
+      [
+        55,
+        142,
+        3,
+        11
+      ],
+      [
+        443,
+        0,
+        633,
+        27
+      ],
+      [
+        314,
+        17,
+        34,
+        2115
+      ]
+    ]
+  },
+  "candidate_oof": {
+    "macro_f1": 0.7749451430616494,
+    "accuracy": 0.8978051167342374,
+    "classification_report": {
+      "0": {
+        "precision": 0.9235403151065802,
+        "recall": 0.9479642313546424,
+        "f1-score": 0.9355929020749225,
+        "support": 10512
+      },
+      "1": {
+        "precision": 0.6908212560386473,
+        "recall": 0.6777251184834123,
+        "f1-score": 0.6842105263157895,
+        "support": 211
+      },
+      "2": {
+        "precision": 0.628968253968254,
+        "recall": 0.5747960108794198,
+        "f1-score": 0.600663192799621,
+        "support": 1103
+      },
+      "3": {
+        "precision": 0.913515862668405,
+        "recall": 0.8475806451612903,
+        "f1-score": 0.8793139510562644,
+        "support": 2480
+      },
+      "accuracy": 0.8978051167342374,
+      "macro avg": {
+        "precision": 0.7892114219454717,
+        "recall": 0.7620165014696912,
+        "f1-score": 0.7749451430616494,
+        "support": 14306
+      },
+      "weighted avg": {
+        "precision": 0.8956584930077698,
+        "recall": 0.8978051167342374,
+        "f1-score": 0.8963058232868542,
+        "support": 14306
+      }
+    },
+    "confusion_matrix": [
+      [
+        9965,
+        47,
+        338,
+        162
+      ],
+      [
+        54,
+        143,
+        3,
+        11
+      ],
+      [
+        443,
+        0,
+        634,
+        26
+      ],
+      [
+        328,
+        17,
+        33,
+        2102
+      ]
+    ]
+  },
+  "delta": 0.0017993584951959685,
+  "fold_deltas": [
+    0.004024700333167708,
+    0.0028846296624039924,
+    -0.0016802264104008868
+  ],
+  "novel_fake_f1_delta": 0.00629274965800275,
+  "bootstrap": {
+    "observed_delta": 0.0017993584951959685,
+    "mean": 0.0018180840916462398,
+    "sd": 0.0017344940841695273,
+    "q025": -0.001547813925346367,
+    "q05": -0.0009773283143307886,
+    "q95": 0.0047078951386967105,
+    "q975": 0.005291503906059022,
+    "fraction_delta_gt_0": 0.859,
+    "groups": 13656,
+    "rows": 14306,
+    "resamples": 2000,
+    "seed": 102,
+    "fraction_resamples_missing_a_class": 0,
+    "intervals": "q025-q975: central 95%; q05-q95: central 90%",
+    "caveat": "Conditional on these selected/fitted predictions. Does not remove train/validation template overlap, selection bias, or training-sample uncertainty. Positive fraction is not a posterior probability or a calibrated p-value."
+  },
+  "gates": {
+    "macro": false,
+    "folds": true,
+    "novel": true,
+    "bootstrap": false
+  },
+  "elapsed_seconds": 1158.0774021148682,
+  "exit_code": 0,
+  "active_training": false,
+  "submission_exists": false
+}

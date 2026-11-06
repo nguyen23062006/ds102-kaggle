@@ -1,0 +1,55 @@
+{
+  "config": {
+    "projection": {
+      "hidden": [
+        128,
+        64
+      ],
+      "dropout": 0.35,
+      "epochs": 40,
+      "snapshots": [
+        20,
+        30,
+        40
+      ],
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "batch_size": 256,
+      "seed": 102,
+      "class_weight": "sqrt inverse frequency",
+      "latent_replacement_fraction": 0.15
+    },
+    "representation": "Small SVD128 MLP plus half original latent CatBoost",
+    "new_mlp_coefficient": 0.15,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.002,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.003,
+    "max_novel_fake_f1_drop": 0,
+    "min_dev_gain": 0.001,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Original SVD128 numeric features and train-only scaler/category encoder; randomly initialized residual MLP, fixed40epochs and snapshot averaging20/30/40",
+  "caveat": "Single small SVD-feature neural recipe; no pretrained embeddings, no validation early stopping or epoch search. Reused OOF/dev selection bias remains; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_worst_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "epoch": 40,
+  "training_loss": 0.05191580369806085,
+  "fold_delta": -0.006358990048343616,
+  "svd_mlp_alone_macro": 0.7377637640549822,
+  "completed_folds": 2,
+  "reason": "Irreversible violation of predeclared worst-fold floor.",
+  "elapsed_seconds": 56.59671998023987
+}

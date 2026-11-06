@@ -1,0 +1,82 @@
+{
+  "manifest_id": "cafb2ff8600ecd2a3c4bed68d2a462dd20e3b34fb47456ba470b01ce6833328f",
+  "config": {
+    "model_seed": 102,
+    "cluster_split_seed": 2053,
+    "exact_split_seed": 102,
+    "folds": 3,
+    "group_threshold": 0.7,
+    "template_threshold": 0.6,
+    "svd_dimensions": 128,
+    "topic_dimensions": 64,
+    "topic_max_features": 60000,
+    "topic_ngrams": [
+      1,
+      2
+    ],
+    "topic_min_df": 3,
+    "topic_batch_size": 512,
+    "topic_epochs": 100,
+    "topic_transform_iterations": 100,
+    "trees": 800,
+    "depth": 5,
+    "learning_rate": 0.06,
+    "l2_leaf_reg": 8,
+    "candidate_weights": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "class_weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "gates": {
+      "cluster_min_delta": 0.003,
+      "exact_min_delta": 0.002,
+      "min_positive_folds": 2,
+      "max_fold_drop": 0.005,
+      "min_novel_fake_f1_delta": 0.0,
+      "bootstrap_q025_positive": true,
+      "min_dev_delta": 0.001,
+      "min_dev_without_exact_overlap_delta": 0.001
+    },
+    "fit_data": "training partitions only; dev/test never fit",
+    "pretrained": false,
+    "external_data": false
+  },
+  "stage": "pruned_on_predeclared_fold_gates",
+  "protocols": {},
+  "execution": "hosted Colab CPU",
+  "submission_created": false,
+  "best_user_reported_kaggle": 0.77436,
+  "caveat": "Grouped folds are a new stress test of adaptively chosen recipes, not untouched data. Bootstrap is conditional; Kaggle improvement is unknown.",
+  "elapsed_seconds": 2931.366268634796,
+  "partition": "/content/ds102_v53/run/cluster/fold2",
+  "component": "topics",
+  "protocol": "cluster",
+  "fold": 3,
+  "fold_deltas": [
+    -0.002818052460681786,
+    0.0006585075815120911,
+    -0.0034621571972869303
+  ],
+  "group_info": {
+    "groups": 13656,
+    "largest": 281,
+    "largest_fraction": 0.019642108206346987,
+    "rows_in_groups_ge2": 806,
+    "group_size_quantiles": [
+      1.0,
+      1.0,
+      2.0,
+      281.0
+    ],
+    "mixed_label_groups": 34,
+    "rows_in_mixed_label_groups": 493,
+    "class1_rows_in_groups_ge2": 108
+  },
+  "rejected_protocol": "cluster"
+}

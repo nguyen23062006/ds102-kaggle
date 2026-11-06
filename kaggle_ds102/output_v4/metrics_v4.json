@@ -1,0 +1,189 @@
+{
+  "selection": [
+    {
+      "kernel_weight": 0.0,
+      "oof_macro_f1": 0.7651232845255038,
+      "fold_macro_f1": [
+        0.7756573287215651,
+        0.761976967519318,
+        0.7570169883016922
+      ]
+    },
+    {
+      "kernel_weight": 0.05,
+      "oof_macro_f1": 0.7683527341114682,
+      "fold_macro_f1": [
+        0.7799966177181555,
+        0.7628115958547235,
+        0.7616330673632855
+      ]
+    },
+    {
+      "kernel_weight": 0.1,
+      "oof_macro_f1": 0.7686788914302343,
+      "fold_macro_f1": [
+        0.7810663377190944,
+        0.7629333130446871,
+        0.7614476546344613
+      ]
+    },
+    {
+      "kernel_weight": 0.2,
+      "oof_macro_f1": 0.7655869056177402,
+      "fold_macro_f1": [
+        0.7776473438432163,
+        0.7609379329520625,
+        0.7575413850508557
+      ]
+    }
+  ],
+  "chosen_kernel_weight": 0.1,
+  "kernel_config": {
+    "C": 1.0,
+    "weight": "sqrt_balanced"
+  },
+  "dev": {
+    "macro_f1": 0.7224755136057716,
+    "accuracy": 0.89937106918239,
+    "classification_report": {
+      "0": {
+        "precision": 0.9196428571428571,
+        "recall": 0.9577345731191885,
+        "f1-score": 0.9383022774327122,
+        "support": 1183.0
+      },
+      "1": {
+        "precision": 0.7,
+        "recall": 0.4117647058823529,
+        "f1-score": 0.5185185185185185,
+        "support": 17.0
+      },
+      "2": {
+        "precision": 0.6276595744680851,
+        "recall": 0.49166666666666664,
+        "f1-score": 0.5514018691588785,
+        "support": 120.0
+      },
+      "3": {
+        "precision": 0.9094488188976378,
+        "recall": 0.8555555555555555,
+        "f1-score": 0.8816793893129771,
+        "support": 270.0
+      },
+      "accuracy": 0.89937106918239,
+      "macro avg": {
+        "precision": 0.789187812627145,
+        "recall": 0.6791803753059409,
+        "f1-score": 0.7224755136057716,
+        "support": 1590.0
+      },
+      "weighted avg": {
+        "precision": 0.8935269371311526,
+        "recall": 0.89937106918239,
+        "f1-score": 0.8949987851769073,
+        "support": 1590.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1133,
+        2,
+        32,
+        16
+      ],
+      [
+        6,
+        7,
+        0,
+        4
+      ],
+      [
+        58,
+        0,
+        59,
+        3
+      ],
+      [
+        35,
+        1,
+        3,
+        231
+      ]
+    ]
+  },
+  "v3_dev": {
+    "macro_f1": 0.7331557178864636,
+    "accuracy": 0.9031446540880503,
+    "classification_report": {
+      "0": {
+        "precision": 0.92616899097621,
+        "recall": 0.9543533389687235,
+        "f1-score": 0.9400499583680266,
+        "support": 1183.0
+      },
+      "1": {
+        "precision": 0.7,
+        "recall": 0.4117647058823529,
+        "f1-score": 0.5185185185185185,
+        "support": 17.0
+      },
+      "2": {
+        "precision": 0.6372549019607843,
+        "recall": 0.5416666666666666,
+        "f1-score": 0.5855855855855856,
+        "support": 120.0
+      },
+      "3": {
+        "precision": 0.9073359073359073,
+        "recall": 0.8703703703703703,
+        "f1-score": 0.888468809073724,
+        "support": 270.0
+      },
+      "accuracy": 0.9031446540880503,
+      "macro avg": {
+        "precision": 0.7926899500682254,
+        "recall": 0.6945387704720283,
+        "f1-score": 0.7331557178864636,
+        "support": 1590.0
+      },
+      "weighted avg": {
+        "precision": 0.8987479242395255,
+        "recall": 0.9031446540880503,
+        "f1-score": 0.9000319272228717,
+        "support": 1590.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1129,
+        2,
+        34,
+        18
+      ],
+      [
+        7,
+        7,
+        0,
+        3
+      ],
+      [
+        52,
+        0,
+        65,
+        3
+      ],
+      [
+        31,
+        1,
+        3,
+        235
+      ]
+    ]
+  },
+  "rows_verified": 3974,
+  "pretrained": false,
+  "new_training_execution": "Google Colab CPU",
+  "v3_prediction_source": "User-authorized cached predictions from previous v3 run",
+  "fit_data": "train only",
+  "caveat": "CV used for model selection; dev reused in development; Kaggle score unknown"
+}

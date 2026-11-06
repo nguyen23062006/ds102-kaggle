@@ -1,0 +1,248 @@
+{
+  "config": {
+    "ridge": 2,
+    "parameter_bound": 0.5,
+    "template_positive_weight": 0.5,
+    "baseline_class_weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_gain": 0.002,
+    "min_novel_fake_f1_gain": 0.01,
+    "min_dev_gain": 0.003,
+    "max_fold_drop": 0.003,
+    "seed": 102,
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "execution": "hosted Colab",
+  "fit_data": "meta calibration on train OOF only; dev/test excluded",
+  "caveat": "Existing-OOF meta cross-validation is conditional and NOT fully nested: upstream fitted models overlap. Adaptive repeated OOF/dev selection remains. Macro-weighted loss is a surrogate for macroF1. No confirmed Kaggle gain.",
+  "stage": "rejected_on_cv",
+  "baseline": {
+    "macro_f1": 0.7749451430616494,
+    "accuracy": 0.8978051167342374,
+    "classification_report": {
+      "0": {
+        "precision": 0.9235403151065802,
+        "recall": 0.9479642313546424,
+        "f1-score": 0.9355929020749225,
+        "support": 10512
+      },
+      "1": {
+        "precision": 0.6908212560386473,
+        "recall": 0.6777251184834123,
+        "f1-score": 0.6842105263157895,
+        "support": 211
+      },
+      "2": {
+        "precision": 0.628968253968254,
+        "recall": 0.5747960108794198,
+        "f1-score": 0.600663192799621,
+        "support": 1103
+      },
+      "3": {
+        "precision": 0.913515862668405,
+        "recall": 0.8475806451612903,
+        "f1-score": 0.8793139510562644,
+        "support": 2480
+      },
+      "accuracy": 0.8978051167342374,
+      "macro avg": {
+        "precision": 0.7892114219454717,
+        "recall": 0.7620165014696912,
+        "f1-score": 0.7749451430616494,
+        "support": 14306
+      },
+      "weighted avg": {
+        "precision": 0.8956584930077698,
+        "recall": 0.8978051167342374,
+        "f1-score": 0.8963058232868542,
+        "support": 14306
+      }
+    },
+    "confusion_matrix": [
+      [
+        9965,
+        47,
+        338,
+        162
+      ],
+      [
+        54,
+        143,
+        3,
+        11
+      ],
+      [
+        443,
+        0,
+        634,
+        26
+      ],
+      [
+        328,
+        17,
+        33,
+        2102
+      ]
+    ]
+  },
+  "conditional_crossfit_candidate": {
+    "macro_f1": 0.774532606818739,
+    "accuracy": 0.8961274989514889,
+    "classification_report": {
+      "0": {
+        "precision": 0.9288333176647551,
+        "recall": 0.9398782343987824,
+        "f1-score": 0.9343231358456665,
+        "support": 10512
+      },
+      "1": {
+        "precision": 0.6777251184834123,
+        "recall": 0.6777251184834123,
+        "f1-score": 0.6777251184834123,
+        "support": 211
+      },
+      "2": {
+        "precision": 0.600358422939068,
+        "recall": 0.6074342701722575,
+        "f1-score": 0.6038756196484903,
+        "support": 1103
+      },
+      "3": {
+        "precision": 0.908198121263877,
+        "recall": 0.8576612903225806,
+        "f1-score": 0.882206553297387,
+        "support": 2480
+      },
+      "accuracy": 0.8961274989514889,
+      "macro avg": {
+        "precision": 0.7787787450877781,
+        "recall": 0.7706747283442581,
+        "f1-score": 0.774532606818739,
+        "support": 14306
+      },
+      "weighted avg": {
+        "precision": 0.8962269339108145,
+        "recall": 0.8961274989514889,
+        "f1-score": 0.8960262732181918,
+        "support": 14306
+      }
+    },
+    "confusion_matrix": [
+      [
+        9880,
+        49,
+        402,
+        181
+      ],
+      [
+        54,
+        143,
+        3,
+        11
+      ],
+      [
+        409,
+        1,
+        670,
+        23
+      ],
+      [
+        294,
+        18,
+        41,
+        2127
+      ]
+    ]
+  },
+  "delta": -0.0004125362429103774,
+  "fold_deltas": [
+    0.0004699181536795827,
+    -0.0012725505936828085,
+    -0.0006496186666358206
+  ],
+  "novel_fake_f1_delta": -0.007973421926910307,
+  "fit_info": [
+    {
+      "iterations": 5,
+      "objective": 0.7691993224081113,
+      "parameter_norm": 0.12257290813742655
+    },
+    {
+      "iterations": 5,
+      "objective": 0.7095958110744122,
+      "parameter_norm": 0.11779129409110362
+    },
+    {
+      "iterations": 5,
+      "objective": 0.7159573593504553,
+      "parameter_norm": 0.1145508238588641
+    }
+  ],
+  "final_fit_info": {
+    "iterations": 5,
+    "objective": 0.7313547166159151,
+    "parameter_norm": 0.11813745776554356
+  },
+  "final_theta": [
+    [
+      0.0067997862793787505,
+      0.0005149987593951003,
+      -0.00009823981572008399,
+      -0.043107127388263666,
+      -0.08216600337149149
+    ],
+    [
+      -0.012241599162280648,
+      0.0004005782316255046,
+      -0.0005510480331550329,
+      0.0300392784529631,
+      0.05609626400953246
+    ],
+    [
+      0.0018555626091214061,
+      -0.00047382459436836656,
+      -0.0009729036403936714,
+      0.015598079070165504,
+      0.028932394363009054
+    ],
+    [
+      0.0009859366029618892,
+      0.00021270208285061696,
+      0.0006233900986958135,
+      -0.002530230134864987,
+      -0.0028626550010501218
+    ]
+  ],
+  "full_fit_score_not_validation": 0.7747646714444881,
+  "bootstrap": {
+    "observed_delta": -0.0004125362429103774,
+    "mean": -0.0004195145600715965,
+    "sd": 0.0015546064549763446,
+    "q025": -0.003537284311883604,
+    "q05": -0.002967830266896132,
+    "q95": 0.0020682709379796376,
+    "q975": 0.002605733807735043,
+    "fraction_delta_gt_0": 0.4015,
+    "groups": 13656,
+    "rows": 14306,
+    "resamples": 2000,
+    "seed": 102,
+    "fraction_resamples_missing_a_class": 0,
+    "intervals": "q025-q975: central 95%; q05-q95: central 90%",
+    "caveat": "Conditional on these selected/fitted predictions. Does not remove train/validation template overlap, selection bias, or training-sample uncertainty. Positive fraction is not a posterior probability or a calibrated p-value."
+  },
+  "gates": {
+    "macro": false,
+    "folds": false,
+    "worst": true,
+    "novel": false,
+    "conditional_bootstrap": false
+  },
+  "elapsed_seconds": 47.84254789352417
+}

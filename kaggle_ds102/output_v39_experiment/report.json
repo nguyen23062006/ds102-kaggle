@@ -1,0 +1,56 @@
+{
+  "config": {
+    "projection": {
+      "trees": 500,
+      "depth": 5,
+      "lr": 0.1,
+      "l2": 5,
+      "seed": 102,
+      "thread_count": 2,
+      "feature_calcers": [
+        "BoW:top_tokens_count=700",
+        "NaiveBayes",
+        "BM25"
+      ],
+      "boosting_type": "Ordered",
+      "class_weight": "SqrtBalanced",
+      "new_cat_coefficient": 0.175,
+      "old_cat_coefficient": 0.175
+    },
+    "representation": "Half CatBoost text700 replaced by text_ordered; other components unchanged",
+    "new_cat_coefficient": 0.175,
+    "weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.002,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.003,
+    "max_novel_fake_f1_drop": 0.0,
+    "min_dev_gain": 0.001,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Keep BoW700/dictionaries/trees/lr/depth fixed; change CatBoost text boosting_type from Plain to Ordered",
+  "caveat": "Single algorithm change motivated by ordered boosting prediction-shift literature, not a claim of train/validation leakage in prior code. More compute may be required. Reused OOF/dev selection bias remains; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_positive_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "fold_delta": -0.006818137349112741,
+  "text_ordered_alone_macro": 0.7413451342888804,
+  "completed_folds": 2,
+  "fold_deltas": [
+    -0.0006476621940635363,
+    -0.006818137349112741
+  ],
+  "reason": "The predeclared minimum of two positive folds is now impossible.",
+  "full_oof_available": false,
+  "elapsed_seconds": 1736.6092245578766
+}

@@ -1,0 +1,51 @@
+{
+  "config": {
+    "projection": {
+      "n_estimators": 600,
+      "max_features": "sqrt",
+      "min_samples_leaf": 2,
+      "bootstrap": false,
+      "random_state": 102,
+      "n_jobs": 2,
+      "class_weight": "sqrt inverse frequency",
+      "dimensions": 128,
+      "svd_iterations": 5
+    },
+    "representation": "ExtraTrees on original SVD128 features",
+    "branch_weight": 0.15,
+    "weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "max_novel_fake_f1_drop": 0.01,
+    "max_dev_drop": 0.005,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Same SVD128 features; randomized forest with sqrt inverse-frequency class weights and train-only category encoding",
+  "caveat": "One fixed randomized-forest blend, not a tuning grid. Cached original SVD128 columns only; description features excluded. Reused OOF/dev creates selection bias. Bootstrap is conditional; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_positive_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "feature_columns": 592,
+  "fold_delta": -0.0062266685379717135,
+  "extra_trees_alone_macro": 0.568520962480512,
+  "completed_folds": 2,
+  "fold_deltas": [
+    -0.0003910259055437404,
+    -0.0062266685379717135
+  ],
+  "reason": "The predeclared minimum of two positive folds is now impossible.",
+  "full_oof_available": false,
+  "elapsed_seconds": 81.47007465362549
+}

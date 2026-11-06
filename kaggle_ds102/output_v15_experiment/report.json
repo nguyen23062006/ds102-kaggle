@@ -1,0 +1,65 @@
+{
+  "config": {
+    "cnn": {
+      "vocabulary": 30000,
+      "min_count": 2,
+      "embedding": 64,
+      "channels": 48,
+      "kernels": [
+        2,
+        3,
+        4
+      ],
+      "review_length": 160,
+      "title_length": 40,
+      "hidden": 128,
+      "dropout": 0.5,
+      "embedding_dropout": 0.2,
+      "epochs": 5,
+      "snapshot_epochs": [
+        3,
+        4,
+        5
+      ],
+      "batch_size": 64,
+      "lr": 0.0015,
+      "weight_decay": 0.05,
+      "class_weights": "inverse sqrt class frequency from fitting labels",
+      "seed": 102,
+      "initialization": "all weights random; no pretrained embeddings or models"
+    },
+    "branch_weight": 0.2,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "max_novel_fake_f1_drop": 0.01,
+    "max_dev_drop": 0.005,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "random; no downloaded model or embedding",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "reference_paper": "https://aclanthology.org/D14-1181/",
+  "caveat": "Modified CNN-rand-inspired model, not a reproduction of paper results. Reused OOF/dev creates selection bias. Bootstrap is conditional; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_worst_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "device": "cpu",
+  "epoch": 5,
+  "training_loss": 0.06296805932915843,
+  "elapsed_seconds": 272.92018485069275,
+  "fold_delta": -0.013214938047725111,
+  "cnn_alone_macro": 0.7116554915424324,
+  "completed_folds": 2,
+  "reason": "Irreversible violation of the predeclared worst-fold floor; no future fold can pass all gates.",
+  "exit_code": 0
+}

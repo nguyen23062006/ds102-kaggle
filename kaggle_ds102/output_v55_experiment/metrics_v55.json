@@ -1,0 +1,53 @@
+{
+  "stage": "pruned_on_predeclared_fold_gates",
+  "manifest_id": "755beb67d2fcb5297039393794cd43e02f8e563ea48e4d808830699c87f0f4a6",
+  "config": {
+    "model_family": "RBF-SVM on SVD128/numeric/product-relation features",
+    "C": 4.0,
+    "gamma": "scale",
+    "numeric_clip": 5.0,
+    "categorical_scale": 0.2,
+    "sample_weight": "sqrt inverse class frequency, both SVC and calibration",
+    "calibration": "three inner group folds; sigmoid; ensemble=True; n_jobs=1",
+    "representation_calibration_caveat": "SVD fits outer training rows, including inner calibration text without labels; scaler/SVC refit on inner training rows. No outer evaluation row fits any stage.",
+    "seed": 102,
+    "cluster_split_seed": 2053,
+    "cluster_threshold": 0.7,
+    "folds": 3,
+    "candidate_alpha": 0.15,
+    "class_weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "gates": {
+      "cluster_min_delta": 0.003,
+      "exact_min_delta": 0.002,
+      "min_positive_folds": 2,
+      "max_fold_drop": 0.005,
+      "min_novel_fake_f1_delta": 0.0,
+      "bootstrap_q025_positive": true,
+      "min_dev_delta": 0.001,
+      "min_dev_without_exact_overlap_delta": 0.001
+    },
+    "pretrained": false,
+    "external_data": false,
+    "fit_data": "outer training partitions only",
+    "head_source_sha256": "be1e8b9d4e461a35cfef992bff18082092fa5a210b1ae9d6fb4b42f181b71aa4"
+  },
+  "protocols": {},
+  "execution": "hosted Colab CPU",
+  "submission_created": false,
+  "best_user_reported_kaggle": 0.77436,
+  "caveat": "Adaptive project history remains; new grouped folds are a stress test, not untouched data. Conditional bootstrap is not post-selection proof or a promise of Kaggle gain.",
+  "elapsed_seconds": 432.7213578224182,
+  "protocol": "cluster",
+  "fold": 3,
+  "fold_deltas": [
+    0.003958387848514322,
+    -0.0033174904955406426,
+    -0.005228927285216178
+  ],
+  "rejected_protocol": "cluster"
+}

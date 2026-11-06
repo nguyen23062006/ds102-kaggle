@@ -1,0 +1,55 @@
+{
+  "stage": "pruned_on_predeclared_fold_gates",
+  "manifest_id": "c7d4b51d23b27a2924420de0f490cb17e3d94c92839fb021adf2f925414ee830",
+  "config": {
+    "model_family": "BM25 word1-3/char2-5 LinearSVC + NB-SVM",
+    "pretrained": false,
+    "external_data": false,
+    "fit_data": "training partitions only",
+    "k1": 1.2,
+    "b": 0.75,
+    "idf": "log(1+(N-df+.5)/(df+.5))",
+    "document_length": "ngram count mass in fitted vocabulary",
+    "normalization": "L2 each view",
+    "word_max_features": 140000,
+    "char_max_features": 180000,
+    "svm_C": 0.5,
+    "svm_weight": "balanced",
+    "margin_mix": [
+      0.75,
+      0.25
+    ],
+    "temperature_multiplier": 3.0,
+    "combination": ".85 * complete V11 baseline + .15 * BM25 SVM branch",
+    "class_weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "gates": {
+      "cluster_min_delta": 0.003,
+      "exact_min_delta": 0.002,
+      "min_positive_folds": 2,
+      "max_fold_drop": 0.005,
+      "min_novel_fake_f1_delta": 0.0,
+      "bootstrap_q025_positive": true,
+      "min_dev_delta": 0.001,
+      "min_dev_without_exact_overlap_delta": 0.001
+    },
+    "selection_note": "New feature weighting, not a retune of V58 or past gates",
+    "head_source_sha256": "581b99b71abf406da759dc99ec30743025c706675597b92bb6176c8d8c4db60b"
+  },
+  "protocols": {},
+  "execution": "hosted Colab CPU",
+  "submission_created": false,
+  "best_user_reported_kaggle": 0.77436,
+  "caveat": "Adaptive project history remains; new grouped folds are a stress test, not untouched data. Conditional bootstrap is not post-selection proof or a promise of Kaggle gain.",
+  "elapsed_seconds": 128.08476424217224,
+  "protocol": "cluster",
+  "fold": 1,
+  "fold_deltas": [
+    -0.017446067464881643
+  ],
+  "rejected_protocol": "cluster"
+}

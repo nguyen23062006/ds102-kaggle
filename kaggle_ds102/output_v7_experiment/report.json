@@ -1,0 +1,200 @@
+{
+  "config": {
+    "C": 4,
+    "branch_weight": 0.2,
+    "seed": 102,
+    "folds": 3,
+    "cluster_threshold": 0.7,
+    "class_weight": "sqrt_binary_balanced",
+    "min_delta": 0.003,
+    "min_positive_folds": 2,
+    "max_novel_f1_drop": 0.01,
+    "max_dev_drop": 0.005
+  },
+  "protocols": {
+    "exact": {
+      "baseline": {
+        "macro_f1": 0.7690359812045485,
+        "accuracy": 0.8968964071019153,
+        "classification_report": {
+          "0": {
+            "precision": 0.9253606328524895,
+            "recall": 0.9458713850837138,
+            "f1-score": 0.9355035988145082,
+            "support": 10512
+          },
+          "1": {
+            "precision": 0.6927083333333334,
+            "recall": 0.6303317535545023,
+            "f1-score": 0.6600496277915633,
+            "support": 211
+          },
+          "2": {
+            "precision": 0.6161137440758294,
+            "recall": 0.5893019038984587,
+            "f1-score": 0.6024096385542169,
+            "support": 1103
+          },
+          "3": {
+            "precision": 0.9096802074330165,
+            "recall": 0.8487903225806451,
+            "f1-score": 0.8781810596579057,
+            "support": 2480
+          },
+          "accuracy": 0.8968964071019153,
+          "macro avg": {
+            "precision": 0.7859657294236672,
+            "recall": 0.7535738412793299,
+            "f1-score": 0.7690359812045485,
+            "support": 14306
+          },
+          "weighted avg": {
+            "precision": 0.895367873970937,
+            "recall": 0.8968964071019153,
+            "f1-score": 0.895822113901792,
+            "support": 14306
+          }
+        },
+        "confusion_matrix": [
+          [
+            9943,
+            42,
+            362,
+            165
+          ],
+          [
+            56,
+            133,
+            3,
+            19
+          ],
+          [
+            428,
+            0,
+            650,
+            25
+          ],
+          [
+            318,
+            17,
+            40,
+            2105
+          ]
+        ]
+      },
+      "candidate": {
+        "macro_f1": 0.7664955250760586,
+        "accuracy": 0.896057598210541,
+        "classification_report": {
+          "0": {
+            "precision": 0.9239554317548746,
+            "recall": 0.9466324200913242,
+            "f1-score": 0.9351564702565548,
+            "support": 10512
+          },
+          "1": {
+            "precision": 0.6931216931216931,
+            "recall": 0.6208530805687204,
+            "f1-score": 0.655,
+            "support": 211
+          },
+          "2": {
+            "precision": 0.6170009551098377,
+            "recall": 0.585675430643699,
+            "f1-score": 0.6009302325581395,
+            "support": 1103
+          },
+          "3": {
+            "precision": 0.9091304347826087,
+            "recall": 0.8431451612903226,
+            "f1-score": 0.8748953974895397,
+            "support": 2480
+          },
+          "accuracy": 0.896057598210541,
+          "macro avg": {
+            "precision": 0.7858021286922535,
+            "recall": 0.7490765231485166,
+            "f1-score": 0.7664955250760586,
+            "support": 14306
+          },
+          "weighted avg": {
+            "precision": 0.8943145328954943,
+            "recall": 0.896057598210541,
+            "f1-score": 0.8948089226633993,
+            "support": 14306
+          }
+        },
+        "confusion_matrix": [
+          [
+            9951,
+            41,
+            355,
+            165
+          ],
+          [
+            57,
+            131,
+            4,
+            19
+          ],
+          [
+            432,
+            0,
+            646,
+            25
+          ],
+          [
+            330,
+            17,
+            42,
+            2091
+          ]
+        ]
+      },
+      "fold_deltas": [
+        -0.002934538136479703,
+        -0.0024400209438747433,
+        -0.0024125173381104315
+      ],
+      "novel_fake_f1_delta": -0.007578421032071514,
+      "bootstrap": {
+        "observed_delta": -0.002540456128489965,
+        "mean": -0.002547832999429186,
+        "sd": 0.0014137809571177844,
+        "q025": -0.005488140306747338,
+        "q05": -0.005035386609584858,
+        "q95": -0.0003888565986345461,
+        "q975": 0.00005017786240699108,
+        "fraction_delta_gt_0": 0.028,
+        "groups": 13656,
+        "rows": 14306,
+        "resamples": 2000,
+        "seed": 102,
+        "fraction_resamples_missing_a_class": 0,
+        "intervals": "q025-q975: central 95%; q05-q95: central 90%",
+        "caveat": "Conditional on these selected/fitted predictions. Does not remove train/validation template overlap, selection bias, or training-sample uncertainty. Positive fraction is not a posterior probability or a calibrated p-value."
+      },
+      "gates": {
+        "macro": false,
+        "folds": false,
+        "novel": true,
+        "paired_interval": false
+      }
+    }
+  },
+  "caveat": "Exploratory after prior iterations; Kaggle improvement unknown.",
+  "stage": "rejected_on_exact",
+  "execution": {
+    "platform": "Linux",
+    "colab": true,
+    "exit_code": 0,
+    "versions": {
+      "numpy": "2.1.3",
+      "scipy": "1.16.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.7.2",
+      "catboost": "1.2.10"
+    },
+    "submission_exists": false
+  }
+}

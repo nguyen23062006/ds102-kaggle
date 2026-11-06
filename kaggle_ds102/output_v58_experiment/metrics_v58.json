@@ -1,0 +1,66 @@
+{
+  "stage": "pruned_on_predeclared_fold_gates",
+  "manifest_id": "b36f05f3e389105bf40cb1cd2ae3b52ec6310ad73756f270f521ad47d36f15ba",
+  "config": {
+    "model_family": "Supervised fastText64 with word bigrams and character3-6",
+    "pretrained": false,
+    "external_data": false,
+    "initialization": "fresh random",
+    "fit_data": "training partitions only",
+    "dim": 64,
+    "epoch": 25,
+    "lr": 0.2,
+    "wordNgrams": 2,
+    "minn": 3,
+    "maxn": 6,
+    "bucket": 100000,
+    "minCount": 2,
+    "loss": "softmax",
+    "seed": 102,
+    "thread": 1,
+    "text": "review only; 512 token cap",
+    "resampling": "per-class target round(sqrt(n_max * n_class)); deterministic bootstrap minority only",
+    "combination": ".85 * complete V11 baseline + .15 * supervised fastText",
+    "class_weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "gates": {
+      "cluster_min_delta": 0.003,
+      "exact_min_delta": 0.002,
+      "min_positive_folds": 2,
+      "max_fold_drop": 0.005,
+      "min_novel_fake_f1_delta": 0.0,
+      "bootstrap_q025_positive": true,
+      "min_dev_delta": 0.001,
+      "min_dev_without_exact_overlap_delta": 0.001
+    },
+    "selection_note": "Adaptive research after V57 rejection; bootstrap is conditional, not post-selection proof",
+    "head_source_sha256": "3f40f4cbe31aebe4b7997770466a54456ab2b783907bbef98132ba1d2795a00a",
+    "fasttext_build": {
+      "version": "0.9.2",
+      "source_url": "https://codeload.github.com/facebookresearch/fastText/zip/refs/tags/v0.9.2",
+      "source_archive_sha256": "93cc8a21633e6c6ecf4b5164925ad68a5eda332373d4316d2f56d05f4bfbe823",
+      "binary_sha256": "708fb1c320be901a5cd635b5d95910e90fcf25bc8a3ef61d48ee81c86366692a",
+      "compiler": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+      "build_flags": "make -j2 CXX=c++ -include cstdint",
+      "license": "MIT",
+      "downloaded_assets": "official source code only; no vectors/models/corpora",
+      "elapsed_seconds": 24.64610266685486
+    }
+  },
+  "protocols": {},
+  "execution": "hosted Colab CPU",
+  "submission_created": false,
+  "best_user_reported_kaggle": 0.77436,
+  "caveat": "Adaptive project history remains; new grouped folds are a stress test, not untouched data. Conditional bootstrap is not post-selection proof or a promise of Kaggle gain.",
+  "elapsed_seconds": 19.726198434829712,
+  "protocol": "cluster",
+  "fold": 1,
+  "fold_deltas": [
+    -0.013697696597423925
+  ],
+  "rejected_protocol": "cluster"
+}

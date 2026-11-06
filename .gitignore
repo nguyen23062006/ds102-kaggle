@@ -1,0 +1,32 @@
+# Local configuration and credentials
+.DS_Store
+.env
+.env.*
+!.env.example
+*credentials*.json
+*token*.json
+kaggle.json
+__pycache__/
+*.py[cod]
+.venv*/
+venv/
+.ipynb_checkpoints/
+# Competition data, predictions, model weights and generated bundles
+data/
+*.csv
+*.tsv
+*.npz
+*.npy
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.cbm
+*.bin
+*.safetensors
+*.zip
+*.tar
+*.gz
+*.log
+catboost_info/

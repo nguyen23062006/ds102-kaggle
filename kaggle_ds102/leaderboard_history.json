@@ -1,0 +1,58 @@
+{
+  "source": "user-reported Kaggle scores; not independently retrieved",
+  "submissions": [
+    {
+      "version": "baseline",
+      "score_approximate": 0.73,
+      "file": "output/submission.csv"
+    },
+    {
+      "version": "v2",
+      "score": 0.75946,
+      "file": "output_v2/submission_v2.csv"
+    },
+    {
+      "version": "v3",
+      "score": 0.7636,
+      "file": "output_v3/submission_v3.csv"
+    },
+    {
+      "version": "v4",
+      "score": 0.76636,
+      "file": "output_v4/submission_v4.csv"
+    },
+    {
+      "version": "v5",
+      "score": 0.7674,
+      "file": "output_v5/submission_v5.csv"
+    },
+    {
+      "version": "v6",
+      "score": 0.77269,
+      "file": "output_v6/submission_v6.csv",
+      "reported_date": "2026-11-03"
+    },
+    {
+      "version": "v11_experimental",
+      "score": 0.77436,
+      "file": "output_v11_experimental/submission_v11_experimental.csv",
+      "reported_date": "2026-11-03"
+    },
+    {
+      "version": "v27_experimental",
+      "score": 0.77229,
+      "file": "output_v27_experimental/submission_v27_experimental.csv",
+      "reported_date": "2026-11-03",
+      "status": "below_best; do not prioritize",
+      "changes_vs_best": 8
+    },
+    {
+      "version": "v52_exploratory",
+      "score": 0.7727,
+      "file": "output_v52_exploratory/submission_v52_exploratory.csv",
+      "reported_date": "2026-11-05",
+      "status": "below_best; do not prioritize",
+      "changes_vs_best": 11
+    }
+  ]
+}

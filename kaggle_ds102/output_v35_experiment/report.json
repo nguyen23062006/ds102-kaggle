@@ -1,0 +1,47 @@
+{
+  "config": {
+    "projection": {
+      "svd_dimensions": 128,
+      "canonical_dimensions": 32,
+      "ridge_relative": 0.1,
+      "alignment_fit_label": 0,
+      "trees": 800,
+      "depth": 5,
+      "lr": 0.06,
+      "l2": 8,
+      "seed": 102
+    },
+    "representation": "SVD128 plus class0 ridge-CCA review/title alignment",
+    "latent_replacement_weight": 0.3,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.002,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.003,
+    "max_novel_fake_f1_drop": 0,
+    "min_dev_gain": 0.001,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Preserve original SVD128 features; fit ridge canonical correlation on class0 fitting pairs only, append 131 alignment features",
+  "caveat": "Single fixed class0 alignment hypothesis; ridge .1 and32canonical dimensions. Label-aware projection uses only fitting labels; prediction transform receives no labels. Repeated OOF/dev selection bias remains; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_worst_fold_gate",
+  "fold": 1,
+  "partition": "cross_validation",
+  "alignment_rows": 7038,
+  "feature_columns": 708,
+  "fold_delta": -0.007524282368199464,
+  "canonical_alignment_alone_macro": 0.7262863715363903,
+  "completed_folds": 1,
+  "reason": "Irreversible violation of predeclared worst-fold floor.",
+  "elapsed_seconds": 431.04765939712524
+}

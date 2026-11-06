@@ -1,0 +1,180 @@
+{
+  "recipe": [
+    {
+      "kind": "svm",
+      "C": 0.5,
+      "weight": "balanced",
+      "ensemble_weight": 0.75
+    },
+    {
+      "kind": "nb",
+      "C": 0.5,
+      "weight": "balanced",
+      "ensemble_weight": 0.25
+    }
+  ],
+  "seed": 102,
+  "folds": 3,
+  "python": "3.12.14",
+  "sklearn": "1.7.2",
+  "data_sha256": {
+    "train": "15202b19b2dc2c6c89afeb209024bb0dc77ddf927de44381a96c24a961d823a5",
+    "dev": "d895cc298b1e5b56bbb95c9f9b15610e5207a00cfd12cc79f32061e27b7a8ccf",
+    "test": "82c21afd6f8f4610912bc12ed19c3b6b1a586fb0dfa5d2296f6548ae4fc6b398"
+  },
+  "fit_data": "train only; no dev or test used to fit features, models, or calibration",
+  "oof_raw_macro_f1": 0.7589770118322317,
+  "oof_cross_calibration_macro_f1": 0.7530581768748151,
+  "calibration_bias": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "dev": {
+    "macro_f1": 0.7298057323371717,
+    "accuracy": 0.9031446540880503,
+    "classification_report": {
+      "0": {
+        "precision": 0.9304635761589404,
+        "recall": 0.9501267962806424,
+        "f1-score": 0.9401923881221247,
+        "support": 1183.0
+      },
+      "1": {
+        "precision": 0.6363636363636364,
+        "recall": 0.4117647058823529,
+        "f1-score": 0.5,
+        "support": 17.0
+      },
+      "2": {
+        "precision": 0.6090909090909091,
+        "recall": 0.5583333333333333,
+        "f1-score": 0.5826086956521739,
+        "support": 120.0
+      },
+      "3": {
+        "precision": 0.9118773946360154,
+        "recall": 0.8814814814814815,
+        "f1-score": 0.896421845574388,
+        "support": 270.0
+      },
+      "accuracy": 0.9031446540880503,
+      "macro avg": {
+        "precision": 0.7719488790623753,
+        "recall": 0.7004265792444526,
+        "f1-score": 0.7298057323371717,
+        "support": 1590.0
+      },
+      "weighted avg": {
+        "precision": 0.8999084264508436,
+        "recall": 0.9031446540880503,
+        "f1-score": 0.9010657464979993,
+        "support": 1590.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1124,
+        3,
+        39,
+        17
+      ],
+      [
+        6,
+        7,
+        0,
+        4
+      ],
+      [
+        51,
+        0,
+        67,
+        2
+      ],
+      [
+        27,
+        1,
+        4,
+        238
+      ]
+    ]
+  },
+  "dev_without_comment_overlap": {
+    "macro_f1": 0.7202336428910642,
+    "accuracy": 0.9029803424223208,
+    "classification_report": {
+      "0": {
+        "precision": 0.9300582847626978,
+        "recall": 0.9506382978723404,
+        "f1-score": 0.9402356902356902,
+        "support": 1175.0
+      },
+      "1": {
+        "precision": 0.6,
+        "recall": 0.375,
+        "f1-score": 0.46153846153846156,
+        "support": 16.0
+      },
+      "2": {
+        "precision": 0.6090909090909091,
+        "recall": 0.5583333333333333,
+        "f1-score": 0.5826086956521739,
+        "support": 120.0
+      },
+      "3": {
+        "precision": 0.9140625,
+        "recall": 0.8796992481203008,
+        "f1-score": 0.896551724137931,
+        "support": 266.0
+      },
+      "accuracy": 0.9029803424223208,
+      "macro avg": {
+        "precision": 0.7633029234634017,
+        "recall": 0.6909177198314936,
+        "f1-score": 0.7202336428910642,
+        "support": 1577.0
+      },
+      "weighted avg": {
+        "precision": 0.8995878368339116,
+        "recall": 0.9029803424223208,
+        "f1-score": 0.900797307235575,
+        "support": 1577.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1117,
+        3,
+        39,
+        16
+      ],
+      [
+        6,
+        6,
+        0,
+        4
+      ],
+      [
+        51,
+        0,
+        67,
+        2
+      ],
+      [
+        27,
+        1,
+        4,
+        234
+      ]
+    ]
+  },
+  "selection_caveat": "CV estimates were used for model selection; dev was previously used to inspect baseline errors.",
+  "submission_rows_verified": 3974,
+  "prediction_counts": {
+    "0": 2976,
+    "3": 666,
+    "2": 287,
+    "1": 45
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "config": {
+    "projection": {
+      "trees": 500,
+      "depth": 5,
+      "lr": 0.1,
+      "l2": 5,
+      "seed": 102,
+      "thread_count": 2,
+      "feature_calcers": [
+        "BoW:top_tokens_count=2000",
+        "NaiveBayes",
+        "BM25"
+      ],
+      "class_weight": "SqrtBalanced",
+      "new_cat_coefficient": 0.175,
+      "old_cat_coefficient": 0.175
+    },
+    "representation": "Half CatBoost text700 replaced by text2000; other components unchanged",
+    "new_cat_coefficient": 0.175,
+    "weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "max_novel_fake_f1_drop": 0.01,
+    "max_dev_drop": 0.005,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Original SVM and SVD128 frozen; only BoW cap700 to2000 in a new train-only CatBoost text branch",
+  "caveat": "One fixed BoW capacity change, no grid; replaces half of original CatBoost text coefficient. Reused OOF/dev creates selection bias. Bootstrap is conditional; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_positive_fold_gate",
+  "fold": 3,
+  "partition": "cross_validation",
+  "fold_delta": -0.00046678179762627003,
+  "text2000_alone_macro": 0.7148838260075935,
+  "completed_folds": 3,
+  "fold_deltas": [
+    0.0026005448025732125,
+    -0.003352045379056201,
+    -0.00046678179762627003
+  ],
+  "reason": "The predeclared minimum of two positive folds is now impossible.",
+  "full_oof_available": false,
+  "elapsed_seconds": 921.9520156383514
+}

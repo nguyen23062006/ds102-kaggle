@@ -1,0 +1,53 @@
+{
+  "config": {
+    "projection": {
+      "loss": "hinge",
+      "C": 0.5,
+      "class_weight": "balanced",
+      "dual": true,
+      "max_iter": 30000,
+      "temperature": 3,
+      "svm_weight": 0.75,
+      "nb_weight": 0.25,
+      "new_svm_coefficient": 0.175,
+      "seed": 102
+    },
+    "representation": "Half original squared-hinge SVM component replaced by hinge-loss SVM/NB-SVM",
+    "new_svm_coefficient": 0.175,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.002,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.003,
+    "max_novel_fake_f1_drop": 0,
+    "min_dev_gain": 0.001,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Original TF-IDF and metadata; replace squared-hinge loss by hinge in SVM and NB-SVM, C.5 unchanged; no new tokenizer",
+  "caveat": "One fixed loss change, same features/C/component weights; not an assumption that labels are incorrect. Reused OOF/dev selection bias remains; stricter gates after V27 leaderboard drop. Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_positive_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "text_features": 132339,
+  "class_index": 3,
+  "fold_delta": -0.0034460845145911634,
+  "hinge_svm_alone_macro": 0.7534305326328432,
+  "completed_folds": 2,
+  "fold_deltas": [
+    -0.000386454685987192,
+    -0.0034460845145911634
+  ],
+  "reason": "The predeclared minimum of two positive folds is now impossible.",
+  "full_oof_available": false,
+  "elapsed_seconds": 206.3578541278839
+}

@@ -1,0 +1,24 @@
+{
+  "hypothesis": "Antigravity H1: seven intent features added to SVD128/CatBoost",
+  "execution": "Completed on hosted Colab CPU; no pretrained, no dev fitting",
+  "cluster_baseline": 0.7240841964761913,
+  "cluster_candidate": 0.727055442152492,
+  "cluster_delta": 0.0029712456763006934,
+  "cluster_fold_deltas": [
+    0.0023881840245106867,
+    0.0022118785452095446,
+    0.003993135522599056
+  ],
+  "bootstrap_central95": [
+    0.00047094556141678016,
+    0.006022167975046734
+  ],
+  "dev_baseline": 0.7263490140409449,
+  "dev_candidate": 0.7258836176628667,
+  "dev_delta": -0.0004653963780781867,
+  "dev_corrected_errors": 6,
+  "dev_introduced_errors": 10,
+  "submission_created": false,
+  "conclusion": "Clustered improvement but inconsistent dev signal. Does not establish a leaderboard gain. Keep V11 as the best observed Kaggle submission.",
+  "next_research": "H3 needs regenerated inner OOF inside each outer partition; original global-OOF cross-fitting is insufficient. H2 needs a working training loop and fair comparison to earlier random TextCNN experiments."
+}

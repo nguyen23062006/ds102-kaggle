@@ -1,0 +1,36 @@
+{
+  "config": {
+    "expert": "fake versus all other classes",
+    "expert_weight": 0.15,
+    "trees": 700,
+    "depth": 5,
+    "lr": 0.06,
+    "l2": 8,
+    "seed": 102,
+    "review_char_cap": 6000,
+    "context_char_cap": 18000,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "min_novel_fake_f1_delta": 0,
+    "max_dev_drop": 0.005,
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "execution": "hosted Colab CPU",
+  "fit_data": "train only",
+  "caveat": "Adaptive hypothesis from past OOF errors; repeated OOF/dev use creates selection bias. Alignment scores are features, not rules assigning labels. Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_worst_fold_gate",
+  "fold": 2,
+  "fold_delta": -0.004488983033910321,
+  "completed_folds": 2,
+  "elapsed_seconds": 87.52036166191101,
+  "exit_code": 0
+}

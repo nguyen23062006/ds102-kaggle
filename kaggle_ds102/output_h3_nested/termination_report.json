@@ -1,0 +1,35 @@
+{
+  "stage": "pruned_on_predeclared_worst_fold_gate",
+  "active_training": false,
+  "completed_outer_folds": 1,
+  "completed_inner_partitions": 3,
+  "observed_outer_fold_delta": -0.008916759246189399,
+  "max_allowed_drop": 0.005,
+  "reason": "At least one completed outer fold is below the fixed -.005 lower limit; all-gate pass is impossible. Stopped during outer2/inner1 to save computation.",
+  "metrics_file_preserved": true,
+  "full_nested_oof_completed": false,
+  "pooled_nested_macro": null,
+  "submission_created": false,
+  "reported_fold": {
+    "outer_probabilities": "reused V53 cache",
+    "inner": {
+      "selected_weights": [
+        1.0,
+        2.0,
+        1.6,
+        1.1
+      ],
+      "selected_inner_macro": 0.7342119065329051,
+      "baseline_inner_macro": 0.7020678477784097,
+      "inner_gain_over_baseline": 0.03214405875449544,
+      "n_tied_at_best": 1,
+      "n_candidates": 315,
+      "selected_is_baseline": false
+    },
+    "outer_baseline_macro": 0.6782253320141065,
+    "outer_candidate_macro": 0.6693085727679171,
+    "delta": -0.008916759246189399,
+    "outer_label_changes": 97
+  },
+  "run_manifest_id": "968990493b390ca77d9959479821bfeeca91a11da8313885f56f9fe8fdc1021b"
+}

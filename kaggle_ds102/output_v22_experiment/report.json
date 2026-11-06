@@ -1,0 +1,46 @@
+{
+  "config": {
+    "projection": {
+      "dimensions": 128,
+      "svd_iterations": 5,
+      "row_scale_exponent": 0.25,
+      "seed": 102,
+      "trees": 800,
+      "depth": 5,
+      "lr": 0.06,
+      "l2": 8,
+      "classifier_weight": "SqrtBalanced"
+    },
+    "representation": "train-label-balanced SVD128 basis",
+    "latent_replacement_weight": 0.3,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "max_novel_fake_f1_drop": 0.01,
+    "max_dev_drop": 0.005,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "vectorizers from fitting input; SVD row weights from fitting labels only; unweighted mapping at prediction",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Fit right singular vectors on normalized training rows scaled by (N/(4*n_class))**0.25; transform all rows without label scaling",
+  "caveat": "Class-aware projection proposed after LightGBM trials failed. One fixed exponent; no parameter grid. Reused OOF/dev creates selection bias. Bootstrap is conditional; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_worst_fold_gate",
+  "fold": 1,
+  "partition": "cross_validation",
+  "fold_delta": -0.0054852838981686025,
+  "balanced_projection_alone_macro": 0.730795216024102,
+  "completed_folds": 1,
+  "reason": "Irreversible violation of predeclared worst-fold floor.",
+  "elapsed_seconds": 357.276349067688,
+  "exit_code": 0
+}

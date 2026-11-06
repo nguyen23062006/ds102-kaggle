@@ -1,0 +1,55 @@
+{
+  "config": {
+    "projection": {
+      "dimensions": 128,
+      "description_dimensions": 32,
+      "description_char_cap": 4000,
+      "trees": 800,
+      "depth": 5,
+      "lr": 0.06,
+      "l2": 8,
+      "seed": 102,
+      "classifier_weight": "SqrtBalanced",
+      "vocabulary_fit": "training reviews only; descriptions are transform-only"
+    },
+    "representation": "review/title SVD128 plus description relation features",
+    "latent_replacement_weight": 0.3,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "max_novel_fake_f1_drop": 0.01,
+    "max_dev_drop": 0.005,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews; descriptions transformed using that same space",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Original SVD128 plus first32 description coordinates, products/differences and four similarity scalars; no description fitting",
+  "caveat": "Description-context hypothesis inspired by metadata research; SVD learned from supplied training data, no pretrained embeddings. One fixed configuration. Reused OOF/dev creates selection bias. Bootstrap is conditional; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_positive_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "feature_columns": 677,
+  "fold_delta": -0.0022418400142867334,
+  "description_context_alone_macro": 0.7443669406979345,
+  "completed_folds": 2,
+  "fold_deltas": [
+    -0.0007788568415768582,
+    -0.0022418400142867334
+  ],
+  "positive_folds": 0,
+  "remaining_folds": 1,
+  "reason": "Two negative completed folds make the predeclared minimum of two positive folds out of three impossible.",
+  "exit_code": -15,
+  "full_oof_available": false,
+  "submission_created": false
+}

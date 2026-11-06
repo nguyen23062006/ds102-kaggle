@@ -1,0 +1,27 @@
+{
+  "stage": "completed_both_candidates_pruned",
+  "execution": "hosted Colab CPU",
+  "active_training": false,
+  "pretrained": false,
+  "submission_created": false,
+  "focal_fold_deltas": [
+    0.002666956784297625,
+    -0.0016343684014415993,
+    -0.0009621325688564664
+  ],
+  "cross_entropy_fold_deltas": [
+    -0.005070111685412715
+  ],
+  "cross_entropy_full_cv_completed": false,
+  "focal_full_cv_prediction_available": true,
+  "baseline_best_kaggle": 0.77436,
+  "best_submission": "V11",
+  "source_sha256": {
+    "test_checked.py": "65d99f07e1d873741f0a8993277fb88b6dccb8ca4ac9eff9b81dd7abbcbf4d3d",
+    "h2_experiment.py": "661646a0ca9b75861bbb655b7184400f5843071a6267411894faa9ad612a8d34",
+    "h2_subword_cnn.py": "e3257fc413e40e51c0a4970e86cdeaa104500f45ac4f4e0fb9992dbcbefd091d"
+  },
+  "report_bytes_verified_against_colab": true,
+  "incident": "A diagnostic imported a local queue.py launcher instead of stdlib queue. Duplicate CE stopped before snapshots; launcher renamed. Original CE preserved. See duplicate_run_incident.json.",
+  "next_review": "H2 loss change did not pass predeclared gates. Do not tune to the failed folds or dev. Review measured H3 diagnostics rather than hypothetical precision numbers."
+}

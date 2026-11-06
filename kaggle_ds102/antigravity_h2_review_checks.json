@@ -1,0 +1,36 @@
+{
+  "source": "antigravity_review/next_round",
+  "checked_copy": "antigravity_review/h2_checked",
+  "original_files_modified": false,
+  "corrections_before_scoring": [
+    "Smoke reload now uses the actual saved vocabulary and configured sequence length; original smoke recreated a 1000-token vocabulary after fitting up to 8000 tokens.",
+    "Save vocabulary mapping, rather than only its size, alongside snapshots.",
+    "Mask all convolution windows for inputs shorter than a kernel and explicitly zero the pooled result; original clamp_min(1) allowed a padding-touching window.",
+    "Use identical per-example weighted mean reduction for focal and cross-entropy; original PyTorch weighted CE divided by batch sum of weights, confounding the loss comparison with scaling.",
+    "Record Torch/device and verify the parent's pinned library versions. Limit Torch to two CPU threads; keep deterministic settings.",
+    "Save per-fold confusion matrices and scores before early pruning."
+  ],
+  "tests_executed_on_colab": [
+    "Tokenizer interleaving and unchanged vocabulary at prediction time",
+    "Padding invariance for lengths 0,1,2,3,4,5,9",
+    "Weighted cross-entropy equals focal gamma=0"
+  ],
+  "interpretation_corrections": [
+    "H3 weights hitting grid boundaries does not prove metric gaming; precision collapse and probability-scale shift need measured diagnostics.",
+    "There are no fixed probability thresholds .25 or .35 for weighted multiclass argmax; a class must beat every weighted competitor.",
+    "Margins and confidence are not proven proportional to training-set size by the prior reports.",
+    "V60 is not the only recent candidate with three positive grouped folds; V57 also did. V60 missed the .003 cluster effect-size gate as well as its subsequent dev checks.",
+    "Do not refine H1 to eliminate its ten specific new dev errors. That would further adapt the model to repeatedly inspected dev labels.",
+    "Interleaving 3-5 grams with a 256-token limit covers about 86 character positions of a long review. Longer-context benefit is not guaranteed. Keep this fixed for this experiment."
+  ],
+  "protocol": {
+    "primary": "focal loss",
+    "secondary_ablation": "weighted cross-entropy with matching reduction and all other settings fixed",
+    "multiple_comparisons": "Both outcomes will be reported; no claim of an untouched confirmation set.",
+    "selection_gates_changed": false,
+    "pretrained": false,
+    "external_data": false,
+    "fit_on_mac": false,
+    "automatic_submission": false
+  }
+}

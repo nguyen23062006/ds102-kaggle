@@ -1,0 +1,164 @@
+{
+  "selection": {
+    "raw_macro_f1": 0.767205206591242,
+    "cross_weight_macro_f1": 0.7726681941214265,
+    "fold_deltas": [
+      -0.000994624171253622,
+      0.011473218046151867,
+      0.006104112563458219
+    ],
+    "fold_weights": [
+      [
+        1,
+        1,
+        1.4,
+        0.9
+      ],
+      [
+        1,
+        1.2,
+        1.2,
+        0.9
+      ],
+      [
+        1,
+        1.2,
+        1.2,
+        0.9
+      ]
+    ],
+    "use_weights": true,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "selection_score": 0.7726681941214265,
+    "fold_macro_f1": [
+      0.7783410684545601,
+      0.7747779471478966,
+      0.764052867116404
+    ],
+    "name": "latent_cat_800_0.3",
+    "recipe": {
+      "kind": "latent",
+      "trees": 800,
+      "alpha": 0.3
+    },
+    "fold_delta_vs_v5": [
+      0.0017788138813306098,
+      0.010579620871759454,
+      0.0005642335988884639
+    ]
+  },
+  "dev": {
+    "macro_f1": 0.7243841305757568,
+    "accuracy": 0.8974842767295598,
+    "classification_report": {
+      "0": {
+        "precision": 0.923582580115037,
+        "recall": 0.9501267962806424,
+        "f1-score": 0.9366666666666666,
+        "support": 1183.0
+      },
+      "1": {
+        "precision": 0.6363636363636364,
+        "recall": 0.4117647058823529,
+        "f1-score": 0.5,
+        "support": 17.0
+      },
+      "2": {
+        "precision": 0.6146788990825688,
+        "recall": 0.5583333333333333,
+        "f1-score": 0.5851528384279476,
+        "support": 120.0
+      },
+      "3": {
+        "precision": 0.9051383399209486,
+        "recall": 0.8481481481481481,
+        "f1-score": 0.875717017208413,
+        "support": 270.0
+      },
+      "accuracy": 0.8974842767295598,
+      "macro avg": {
+        "precision": 0.7699408638705477,
+        "recall": 0.6920932459111192,
+        "f1-score": 0.7243841305757568,
+        "support": 1590.0
+      },
+      "weighted avg": {
+        "precision": 0.8940661595992673,
+        "recall": 0.8974842767295598,
+        "f1-score": 0.8951186175624478,
+        "support": 1590.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1124,
+        3,
+        38,
+        18
+      ],
+      [
+        7,
+        7,
+        0,
+        3
+      ],
+      [
+        50,
+        0,
+        67,
+        3
+      ],
+      [
+        36,
+        1,
+        4,
+        229
+      ]
+    ]
+  },
+  "v5_reference": {
+    "cross_weight_oof_macro_f1": 0.7681613908279921,
+    "dev_macro_f1": 0.7348200162618499,
+    "user_reported_kaggle": 0.7674
+  },
+  "rows_verified": 3974,
+  "pretrained": false,
+  "fit_data": "train only; dev/test excluded from feature/model fitting",
+  "selection_data": "grouped train OOF for candidate hyperparameters; dev used to compare finalists",
+  "new_training_execution": "hosted Google Colab CPU",
+  "baseline_source": "previously user-authorized cached v3 predictions",
+  "libraries": {
+    "scikit-learn": "1.7.2; BSD-3-Clause",
+    "CatBoost": "1.2.10; Apache-2.0"
+  },
+  "data_sha256": {
+    "ds102_train.csv": "15202b19b2dc2c6c89afeb209024bb0dc77ddf927de44381a96c24a961d823a5",
+    "ds102_test.csv": "82c21afd6f8f4610912bc12ed19c3b6b1a586fb0dfa5d2296f6548ae4fc6b398",
+    "ds102_samplesubmission.csv": "4cf7832636057152395b8b20302c11a691fd2ab35d50057ef43443f3d388424d",
+    "ds102_dev.csv": "d895cc298b1e5b56bbb95c9f9b15610e5207a00cfd12cc79f32061e27b7a8ccf"
+  },
+  "caveat": "Repeated OOF selection; weighting cross-validation is on existing OOF, not fully nested. Dev reused in development; Kaggle score unknown.",
+  "finalist_comparison": {
+    "kernel_probability": {
+      "CV": 0.7711253766428934,
+      "dev": 0.7231086711115315
+    },
+    "neighbours": {
+      "CV": 0.7700142808240941,
+      "dev": 0.7348200162618499,
+      "test_changes_vs_v5": 3
+    },
+    "latent_catboost": {
+      "CV": 0.7726681941214265,
+      "dev": 0.7243841305757568
+    }
+  },
+  "test_predictions_changed_vs_v5": 64,
+  "submission_sha256": "b6fc3149fdf5ca0544b51bac8f762623b202c1330ca797a35da972a0e8e25f13",
+  "status_note": "Experimental: CV improves over v5 on all folds, but dev decreases; Kaggle improvement is unconfirmed."
+}

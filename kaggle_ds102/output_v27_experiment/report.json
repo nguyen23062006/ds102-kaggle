@@ -1,0 +1,286 @@
+{
+  "config": {
+    "projection": {
+      "trees": 500,
+      "depth": 5,
+      "lr": 0.1,
+      "l2": 5,
+      "seed": 102,
+      "thread_count": 2,
+      "feature_calcers": [
+        "BoW:top_tokens_count=2000",
+        "NaiveBayes",
+        "BM25"
+      ],
+      "class_weight": "SqrtBalanced",
+      "new_cat_coefficient": 0.175,
+      "old_cat_coefficient": 0.175
+    },
+    "representation": "Class2-only text capacity update; compensate class0 mass, preserve class1/3 scores",
+    "class2_update_coefficient": 0.175,
+    "weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "max_novel_fake_f1_drop": 0.01,
+    "max_dev_drop": 0.005,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Reuse BoW2000 fold models; update class2 by .175*(new_cat2-old_cat2), compensate class0 with clipping; class1/3 raw probabilities unchanged",
+  "caveat": "Adaptive hypothesis after inspecting V26 per-class OOF errors; selection bias applies. Class2-only delta fixed at the prior .175 coefficient; no grid. Preserving class1/3 scores need not preserve argmax labels. Bootstrap is conditional; Kaggle improvement unknown.",
+  "stage": "rejected_on_cv",
+  "fold": 3,
+  "partition": "cross_validation",
+  "fold_delta": 0.0007023404137642686,
+  "text2000_alone_macro": 0.7148838260075935,
+  "baseline_oof": {
+    "macro_f1": 0.7749451430616494,
+    "accuracy": 0.8978051167342374,
+    "classification_report": {
+      "0": {
+        "precision": 0.9235403151065802,
+        "recall": 0.9479642313546424,
+        "f1-score": 0.9355929020749225,
+        "support": 10512.0
+      },
+      "1": {
+        "precision": 0.6908212560386473,
+        "recall": 0.6777251184834123,
+        "f1-score": 0.6842105263157895,
+        "support": 211.0
+      },
+      "2": {
+        "precision": 0.628968253968254,
+        "recall": 0.5747960108794198,
+        "f1-score": 0.600663192799621,
+        "support": 1103.0
+      },
+      "3": {
+        "precision": 0.913515862668405,
+        "recall": 0.8475806451612903,
+        "f1-score": 0.8793139510562644,
+        "support": 2480.0
+      },
+      "accuracy": 0.8978051167342374,
+      "macro avg": {
+        "precision": 0.7892114219454717,
+        "recall": 0.7620165014696912,
+        "f1-score": 0.7749451430616494,
+        "support": 14306.0
+      },
+      "weighted avg": {
+        "precision": 0.8956584930077698,
+        "recall": 0.8978051167342374,
+        "f1-score": 0.8963058232868542,
+        "support": 14306.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        9965,
+        47,
+        338,
+        162
+      ],
+      [
+        54,
+        143,
+        3,
+        11
+      ],
+      [
+        443,
+        0,
+        634,
+        26
+      ],
+      [
+        328,
+        17,
+        33,
+        2102
+      ]
+    ]
+  },
+  "candidate_oof": {
+    "macro_f1": 0.7758703545309641,
+    "accuracy": 0.8980148189570809,
+    "classification_report": {
+      "0": {
+        "precision": 0.9236973854997219,
+        "recall": 0.9477739726027398,
+        "f1-score": 0.9355808057094563,
+        "support": 10512.0
+      },
+      "1": {
+        "precision": 0.6908212560386473,
+        "recall": 0.6777251184834123,
+        "f1-score": 0.6842105263157895,
+        "support": 211.0
+      },
+      "2": {
+        "precision": 0.6299212598425197,
+        "recall": 0.5802357207615594,
+        "f1-score": 0.6040585181689476,
+        "support": 1103.0
+      },
+      "3": {
+        "precision": 0.9146713104048759,
+        "recall": 0.8471774193548387,
+        "f1-score": 0.879631567929663,
+        "support": 2480.0
+      },
+      "accuracy": 0.8980148189570809,
+      "macro avg": {
+        "precision": 0.7897778029464412,
+        "recall": 0.7632280578006375,
+        "f1-score": 0.7758703545309641,
+        "support": 14306.0
+      },
+      "weighted avg": {
+        "precision": 0.8960476863419281,
+        "recall": 0.8980148189570809,
+        "f1-score": 0.8966137763649065,
+        "support": 14306.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        9963,
+        47,
+        340,
+        162
+      ],
+      [
+        54,
+        143,
+        3,
+        11
+      ],
+      [
+        440,
+        0,
+        640,
+        23
+      ],
+      [
+        329,
+        17,
+        33,
+        2101
+      ]
+    ]
+  },
+  "text2000_alone": {
+    "macro_f1": 0.7283488279787841,
+    "accuracy": 0.8755067803718719,
+    "classification_report": {
+      "0": {
+        "precision": 0.912584143605086,
+        "recall": 0.9285578386605784,
+        "f1-score": 0.9205016974726519,
+        "support": 10512.0
+      },
+      "1": {
+        "precision": 0.6108597285067874,
+        "recall": 0.6398104265402843,
+        "f1-score": 0.625,
+        "support": 211.0
+      },
+      "2": {
+        "precision": 0.5634408602150538,
+        "recall": 0.47506799637352676,
+        "f1-score": 0.5154943433349729,
+        "support": 1103.0
+      },
+      "3": {
+        "precision": 0.8560390402602684,
+        "recall": 0.8487903225806451,
+        "f1-score": 0.8523992711075117,
+        "support": 2480.0
+      },
+      "accuracy": 0.8755067803718719,
+      "macro avg": {
+        "precision": 0.7357309431467989,
+        "recall": 0.7230566460387586,
+        "f1-score": 0.7283488279787841,
+        "support": 14306.0
+      },
+      "weighted avg": {
+        "precision": 0.871412554798984,
+        "recall": 0.8755067803718719,
+        "f1-score": 0.8731112328308136,
+        "support": 14306.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        9761,
+        68,
+        386,
+        297
+      ],
+      [
+        60,
+        135,
+        3,
+        13
+      ],
+      [
+        535,
+        0,
+        524,
+        44
+      ],
+      [
+        340,
+        18,
+        17,
+        2105
+      ]
+    ]
+  },
+  "delta": 0.0009252114693146796,
+  "fold_deltas": [
+    0.003064039874932978,
+    -0.0010316370313683265,
+    0.0007023404137642686
+  ],
+  "novel_fake_f1_delta": 0.0,
+  "bootstrap": {
+    "observed_delta": 0.0009252114693146796,
+    "mean": 0.0008920241482336649,
+    "sd": 0.0008114801694280067,
+    "q025": -0.0005749045169613165,
+    "q05": -0.0003945911612598274,
+    "q95": 0.0022830441994839685,
+    "q975": 0.002569286549046811,
+    "fraction_delta_gt_0": 0.862,
+    "groups": 13656,
+    "rows": 14306,
+    "resamples": 2000,
+    "seed": 102,
+    "fraction_resamples_missing_a_class": 0.0,
+    "intervals": "q025-q975: central 95%; q05-q95: central 90%",
+    "caveat": "Conditional on these selected/fitted predictions. Does not remove train/validation template overlap, selection bias, or training-sample uncertainty. Positive fraction is not a posterior probability or a calibrated p-value."
+  },
+  "gates": {
+    "macro": false,
+    "folds": true,
+    "worst_fold": true,
+    "novel": true
+  },
+  "bootstrap_q05_positive": false,
+  "elapsed_seconds": 22.929447650909424
+}

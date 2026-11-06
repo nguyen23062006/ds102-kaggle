@@ -1,0 +1,43 @@
+{
+  "config": {
+    "projection": {
+      "smoothing": 50.0,
+      "power": 0.25,
+      "key": [
+        "category",
+        "product_name"
+      ],
+      "seed": 102
+    },
+    "representation": "Product/category conditional prior ratio, smoothing50, power.25",
+    "weights": [
+      1.0,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.002,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.003,
+    "max_novel_fake_f1_drop": 0.0,
+    "min_dev_gain": 0.001,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Smoothed product/category priors fitted only on fitting rows; multiply baseline by (local_prior/global_prior)**.25, then normalize",
+  "caveat": "Heuristic conditional-prior adjustment, not a guarantee of posterior calibration. Product campaign dependence may inflate CV. One fixed smoothing/power, no grid. Reused OOF/dev creates selection bias; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_worst_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "fit_rows": 9538,
+  "fold_delta": -0.003868263863609167,
+  "product_prior_alone_macro": 0.21169427984036765,
+  "completed_folds": 2,
+  "reason": "Irreversible violation of predeclared worst-fold floor.",
+  "elapsed_seconds": 12.538524150848389
+}

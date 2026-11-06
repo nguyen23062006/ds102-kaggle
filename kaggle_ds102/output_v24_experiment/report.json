@@ -1,0 +1,53 @@
+{
+  "config": {
+    "projection": {
+      "dimensions": 192,
+      "svd_iterations": 5,
+      "seed": 102,
+      "trees": 800,
+      "depth": 5,
+      "lr": 0.06,
+      "l2": 8,
+      "classifier_weight": "SqrtBalanced",
+      "vocabulary_fit": "training reviews only"
+    },
+    "representation": "Original review/title relations with rank192 instead of rank128",
+    "latent_replacement_weight": 0.3,
+    "weights": [
+      1,
+      1.2,
+      1.2,
+      0.9
+    ],
+    "min_oof_delta": 0.001,
+    "min_positive_folds": 2,
+    "max_fold_drop": 0.004,
+    "max_novel_fake_f1_drop": 0.01,
+    "max_dev_drop": 0.005,
+    "bootstrap_policy": "report uncertainty, not a binary significance gate",
+    "baseline_user_reported_kaggle": 0.77436,
+    "baseline_csv_sha256": "05bffeff984bd4927c8dd3e9bd3613aef6a7abce303e6e1dcb7cfa4a12012059"
+  },
+  "pretrained": false,
+  "initialization": "all vectorizers/SVD fit from fitting reviews, no pretrained parameters",
+  "execution": "hosted Colab",
+  "fit_data": "train only",
+  "projection_method": "Original unweighted TF-IDF/SVD with 192 components instead of 128; same title relations, statistics and CatBoost",
+  "caveat": "A single fixed higher-rank follow-up motivated by the prior 64-to-128 Kaggle gain. Reused OOF/dev creates selection bias; benefit need not continue with rank. Bootstrap is conditional; Kaggle improvement unknown.",
+  "stage": "pruned_on_fixed_positive_fold_gate",
+  "fold": 2,
+  "partition": "cross_validation",
+  "feature_columns": 833,
+  "fold_delta": -0.005334911551446053,
+  "rank192_alone_macro": 0.7358903467868767,
+  "completed_folds": 2,
+  "fold_deltas": [
+    -0.0037363801057040957,
+    -0.005334911551446053
+  ],
+  "reason": "The predeclared minimum of two positive folds is now impossible.",
+  "full_oof_available": false,
+  "elapsed_seconds": 900.3543994426727,
+  "exit_code": 0,
+  "submission_created": false
+}

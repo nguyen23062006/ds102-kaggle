@@ -1,0 +1,41 @@
+{
+  "review_source": "antigravity_review/ANTIGRAVITY_REVIEW.md",
+  "action": "Run H1 as controlled V60 using the unchanged IntentFeatureExtractor; preserve all original Antigravity files.",
+  "verified_code_findings": [
+    {
+      "file": "antigravity_review/colab_runner.py",
+      "finding": "Uses exact raw comments for folds, whereas current baseline uses normalized near-duplicate groups. Uses a different word-only SVD representation, so its score is not a controlled comparison with V11.",
+      "resolution": "Reuse the verified V53 cluster splits, SVD128 representation and matching baseline prediction caches. Append seven intent columns only."
+    },
+    {
+      "file": "antigravity_review/colab_runner.py",
+      "finding": "Passes the scoring fold as CatBoost eval_set without explicitly disabling best-model selection. This can select the iteration on the same held-out labels used for reporting.",
+      "resolution": "Fixed 800 iterations, no eval_set and no early stopping; same parameters as the baseline latent branch."
+    },
+    {
+      "file": "antigravity_review/h3_threshold_calibration.py",
+      "finding": "Cross-fitting weights on existing global OOF is not strictly nested model validation: probabilities used for calibration may come from models trained using the outer held-out labels. Also, reference_v3 alone does not reconstruct V11 with its latent component.",
+      "resolution": "Do not use this script's reported nested score for promotion. A valid nested experiment requires regenerating inner OOF within each outer fitting partition, with all learned transforms fit inside inner folds."
+    },
+    {
+      "file": "antigravity_review/h2_supervised_subwords.py",
+      "finding": "The runner does not implement an H2 training branch. The ngram serializer exhausts all length-3 windows before length-4/5 windows, so long inputs truncated at 256 tokens may contain no 4/5-grams. The NumPy forward test is not the same multi-kernel PyTorch architecture. Random TextCNN training has already been tried in V14/V15; focal loss and this tokenizer would be distinct changes needing a controlled test.",
+      "resolution": "Defer H2 until a real training loop, token ordering and padding tests are implemented; do not label it already evaluated."
+    }
+  ],
+  "interpretation_corrections": [
+    "Official class 2 is review on brand only. Logistics/deferral may be predictive features but do not redefine the target or automatically determine a test label.",
+    "Hidden test labels and public/private allocation are unknown. Human readings of the changed test reviews do not establish their true labels or explain the exact leaderboard drop.",
+    "A confidence interval crossing zero is uncertainty, not mathematical proof that improvement is impossible. In V57 the class-1 predictions were identical, so its paired class-1 F1 delta is exactly zero in each bootstrap sample containing that class.",
+    "Changing more than 30 test predictions is not a statistical significance criterion and is not a goal of this experiment.",
+    "Novel fake F1 above .45 alone is not an improvement over the current clustered baseline (~.488); compare on identical held-out rows.",
+    "Existing gates and rejected experiments are retained. V60 results will not be used to retroactively relax its own release gates."
+  ],
+  "execution_constraints": {
+    "hosted_colab_only": true,
+    "pretrained": false,
+    "external_training_data": false,
+    "dev_merged_into_train": false,
+    "automatic_kaggle_submission": false
+  }
+}
